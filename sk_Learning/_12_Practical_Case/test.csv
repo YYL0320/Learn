@@ -1,0 +1,6 @@
+PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+11,3,"Kelly, Mr. James",male,34.5,0,0,330911,7.8292,,Q
+12,3,"Wilkes, Mrs. James",female,47,1,0,363272,7,,S
+13,2,"Myles, Mr. Thomas Francis",male,62,0,0,240276,9.6875,,Q
+14,3,"Dwyer, Miss. Ellen",female,18,0,0,330959,7.75,,Q
+15,1,"Jones, Mr. Charles",male,,1,0,PC 17603,82.1708,B28,C
