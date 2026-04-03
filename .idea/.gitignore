@@ -1,0 +1,28 @@
+# PyCharm 自动生成的配置文件夹（必须忽略）
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# 编辑器缓存
+shelf/
+workspace.xml
+httpRequests/
+dataSources/
+dataSources.local.xml
+
+# Python 自动生成的文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.venv
+dist/
+build/
+*.egg-info/
+*.egg
