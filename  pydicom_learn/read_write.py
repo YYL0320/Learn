@@ -38,7 +38,7 @@ from pydicom import examples, dcmread
 # =============================================================================
 
 # 使用dcmread读取用户指定的DICOM文件路径
-# ds = dcmread(r"D:\wenjian\LIDC-IDRI\raw\LIDC-IDRI\LIDC-IDRI-0132\01-01-2000-NA-NA-67346\5418.000000-ThorRoutine  3.0  B31f-62989\1-001.dcm")
+ds = dcmread(r"D:\wenjian\LIDC-IDRI\raw\LIDC-IDRI\LIDC-IDRI-0132\01-01-2000-NA-NA-67346\5418.000000-ThorRoutine  3.0  B31f-62989\1-001.dcm")
 # print(ds)  # 打印完整的DICOM数据集
 
 # 打印分隔线，便于区分不同部分的输出
@@ -46,19 +46,19 @@ from pydicom import examples, dcmread
 
 # 方法1：使用标签的Group和Element编号访问（十六进制）
 # DICOM标签由(Group, Element)组成，如(0010,0020)是患者ID
-# print(ds[0x0010,0x0020])
+print(ds[0x0010,0x0020])
 
 # 方法2：直接使用属性名访问（更直观）
-# print(ds.PatientID)  # 患者ID
+print(ds.PatientID)  # 患者ID
 
 # 打印患者ID的长度
 # print(len(ds.PatientID))
 
 # 方法3：使用字典方式访问标签
-# print(ds["PatientID"])
+print(ds["PatientID"])
 
 # 打印ImageType标签（一个字符串列表）
-# print(ds.ImageType)
+print(ds.ImageType)
 # print(ds.ImageType[1])  # 打印ImageType列表中的第二个元素
 
 # 打印分隔线
@@ -76,7 +76,7 @@ from pydicom import examples, dcmread
 # print("可直接用=来修改元素值")
 
 # 使用in操作符检查标签是否存在
-# print('WindowWidth' in ds)  # 返回True或False
+print('WindowWidth' in ds)  # 返回True或False
 
 # 使用save_as方法保存DICOM文件
 # print("使用ds.save_as('新名称')来保存新的dcm文件")
@@ -93,27 +93,27 @@ from pydicom import examples, dcmread
 # 以下代码展示如何检查DICOM文件的压缩状态和传输语法
 # =============================================================================
 
-# 获取jpeg2k示例数据集
-ds = examples.jpeg2k
-
-# 获取像素数据组（0x7FE0）的数据集，主要包含PixelData标签
-# print(ds.group_dataset(0x7FE0))
-
-# 获取文件元数据中的传输语法UID
-tsyntax = ds.file_meta.TransferSyntaxUID
-
-# 打印传输语法名称，如"JPEG 2000 Image Compression"
-print("压缩方式", tsyntax.name)
-
-# 获取CT示例数据集
-ds = examples.ct
-
-# 获取CT文件的传输语法UID
-tsyntax = ds.file_meta.TransferSyntaxUID
-
-# 打印传输语法名称
-print(tsyntax.name)
-
-# 判断传输语法是否为压缩格式
-# is_compressed属性返回True表示数据是压缩的，False表示未压缩
-print('是否压缩：', tsyntax.is_compressed)
+# # 获取jpeg2k示例数据集
+# ds = examples.jpeg2k
+#
+# # 获取像素数据组（0x7FE0）的数据集，主要包含PixelData标签
+# # print(ds.group_dataset(0x7FE0))
+#
+# # 获取文件元数据中的传输语法UID
+# tsyntax = ds.file_meta.TransferSyntaxUID
+#
+# # 打印传输语法名称，如"JPEG 2000 Image Compression"
+# print("压缩方式", tsyntax.name)
+#
+# # 获取CT示例数据集
+# ds = examples.ct
+#
+# # 获取CT文件的传输语法UID
+# tsyntax = ds.file_meta.TransferSyntaxUID
+#
+# # 打印传输语法名称
+# print(tsyntax.name)
+#
+# # 判断传输语法是否为压缩格式
+# # is_compressed属性返回True表示数据是压缩的，False表示未压缩
+# print('是否压缩：', tsyntax.is_compressed)
